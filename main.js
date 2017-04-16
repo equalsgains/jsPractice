@@ -1,5 +1,16 @@
-var firstName  = prompt("What is your first Name?"),
-    lastName = prompt("and your last name?"),
-    age = prompt("how yougn or old are you?");
+var theList = [];
 
-alert("Well congradulations " + firstName + " " + lastName + " you know JS and you're only " + age + " years old!");
+var command = prompt("What would you like to do?");
+
+
+
+while (command !== "quit") {
+  if (command == "new") {
+    var newItem  =  prompt("What would you like to add?");
+    theList.push(newItem);
+    console.log("item " + newItem + " has been successfully added to the list ");
+    console.log(theList);
+} else if (command === "list")
+  console.log(theList);
+  command = prompt("What would you like to do?");
+}
