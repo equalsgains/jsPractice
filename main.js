@@ -16,6 +16,7 @@ $(function () {
       // console log the results
       // console.log(theList);
     } else if (command === "list")
+      // if their command is list, then console the array
       console.log(theList);
   }
 
