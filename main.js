@@ -1,16 +1,18 @@
-var theList = [];
+var colors = ["red", "blue", "green", "purple"];
 
-var command = prompt("What would you like to do?");
-
-
-
-while (command !== "quit") {
-  if (command == "new") {
-    var newItem  =  prompt("What would you like to add?");
-    theList.push(newItem);
-    console.log("item " + newItem + " has been successfully added to the list ");
-    console.log(theList);
-} else if (command === "list")
-  console.log(theList);
-  command = prompt("What would you like to do?");
+for (var i = 0; i < colors.length; i++) {
+    console.log(colors[i]);
+    
 }
+
+// we could also do a forEach
+
+colors.forEach(function(item){
+    // the "item" holds the data of the array for each index of the array
+    console.log(item);
+});
+functions printColor(color){
+    console.log(color)
+}
+
+colors.forEach(printColor);
