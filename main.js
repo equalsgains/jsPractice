@@ -1,49 +1,26 @@
-$(function () {
+// reverse array
 
-    var theList = [];
-    // list starts out as an empty array
+var array = [1, 2, 3, 4, 5];
 
-    while (input !== "quit") {
-        // unless they type 'quit', the user will be prompted to enter a new input
-        var input = prompt("What would you like to do?");
-        // asking for the input
-        if (input == "new") {
-            addNewItem();
-        } else if (input === "list") {
-            listAll();
-        } else if (input === "delete") {
-            deleteItem();
+function reverseArray(arr) {
+    var reversedArr = arr.reverse();
+    reversedArr.forEach(function (list) {
+        console.log(list);
+    })
+};
+
+// is it uniform
+
+var yes = [1, 1, 1, 1, 1, 1, 1],
+    no = [1, 1, 1, 1, 1, "i",];
+
+function isUniform(arr) {
+    var same = arr[0];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] !== same) {
+            return false
         }
     }
-    console.log("Ok fine!");
+    return true
 
-
-// functions for the loop
-
-function addNewItem() {
-    var newItem = prompt("What would you like to add?");
-    // we're asking for what they would like to add to the list, then we store in a a new variable
-    theList.push(newItem);
-    // we add the new item to the end of the list/array
-    console.log("item " + newItem + " has been successfully added to the list ", theList);
-    // console log the results
-    // console.log(theList);
 };
-
-function listAll() {
-    // if their input is list, then console the array
-    console.log("**********************");
-    theList.forEach(function (todo, i) {
-        console.log(i + ": " + todo);
-    });
-    console.log("**********************");
-};
-
-function deleteItem() {
-    var index = prompt("Which item would you like to delete? select by number in the list");
-    var deletedItem = theList.splice(index, 1);
-    console.log("Item " + deletedItem + " has been deleted from the list");
-};
-
-});
-
